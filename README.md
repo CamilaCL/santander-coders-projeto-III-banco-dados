@@ -75,16 +75,16 @@ O diagrama de entidade-relacionamento do banco de dados de locação de DVDs, co
 1. **Quais são os filmes, suas respectivas categorias e idiomas?**
    - A consulta deve retornar o título do filme (`film.title`), o nome da categoria (`category.name`) e o idioma do filme (`language.name`).
 
-2. **Quais foram os filmes alugados entre os dias 1 e 15 de março de 2006 na loja 1?**
+2. **Quais foram os filmes alugados entre os dias 1 de fevereiro e 15 de março de 2006 na loja 1?**
    - A consulta deve filtrar os aluguéis (`rental.rental_date`) e a loja (`store.store_id = 1`), listando os filmes alugados no período especificado.
 
-3. **Quais são os 5 filmes mais alugados?**
-   - A consulta deve contar o número de vezes que cada filme foi alugado e retornar os 5 filmes com mais aluguéis.
+3. **Qual a quantidade de vezes que cada filme foi alugado?**
+   - A consulta deve retornar o número de vezes que cada filme foi alugado.
 
 4. **Para cada funcionário, qual é o valor total retornado em locações e a quantidade total de locações?**
    - A consulta deve retornar o total de locações (`payment.amount`) e a quantidade de locações (`rental.rental_id`) para cada funcionário (`staff.staff_id`).
 
-5. **Qual categoria de filme retorna mais dinheiro no total?**
+5. **Qual é o nome de categoria de filme que nos retorna mais dinheiro no total?**
    - A consulta deve ordenar as categorias de filmes (`category.name`) pelo valor total recebido em pagamentos (`payment.amount`), listando todas as categorias, inclusive aquelas que não geraram nenhuma receita.
 
 ---
@@ -105,5 +105,5 @@ santander-coders-projeto-III-banco-dados/
 **Instruções**:
 1. Instalar um ambiente de banco de dados relacional (ex.: MySQL ou PostgreSQL).
 2. Executar as scripts SQL na ordem indicada.
-3. Explorar o sistema do restaurante via consultas SQL ou interface implementada.
+3. Explorar o sistema do restaurante via consultas SQL.
 4. Utilizar os scripts da Parte 2 para responder as perguntas com base no banco de dados `dvd_rental`.
