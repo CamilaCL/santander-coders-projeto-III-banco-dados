@@ -20,14 +20,3 @@ GROUP BY
     category.name
 ORDER BY 
     SUM(payment.amount) DESC;
-
-   SELECT c."name" AS categoria,
-       sum(p.amount) AS lucratividade
-FROM public.film f
-INNER JOIN public.film_category fc ON f.film_id = fc.film_id
-INNER JOIN public.category c ON fc.category_id = c.category_id
-LEFT JOIN public.inventory i ON f.film_id = i.inventory_id
-LEFT JOIN public.rental r ON i.inventory_id = r.inventory_id
-LEFT JOIN public.payment p ON r.rental_id = p.rental_id
-GROUP BY c."name"
-ORDER BY sum(p.amount) DESC
