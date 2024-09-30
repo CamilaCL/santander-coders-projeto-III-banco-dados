@@ -94,16 +94,9 @@ Esse repositório está estruturado da seguinte forma:
 ```
 santander-coders-projeto-III-banco-dados/
 │
-├── assets/                               # Imagens utilizadas no projeto
-├── src/                                  # Código-fonte do projeto
-│   ├── parte1                            # Scripts SQL para a implementação do sistema de gerenciamento de restaurante
-│   ├── parte2                            # Scripts SQL para responder às perguntas referentes ao banco de dados dvd_rental
-├── .gitignore                            # Arquivo para ignorar arquivos e diretórios no Git
-├── README.md                             # Arquivo de descrição do projeto
+├── assets/                      # Imagens utilizadas no projeto
+├── parte1                       # Scripts SQL para a implementação do sistema de gerenciamento de restaurante
+├── parte2                       # Scripts SQL para responder às perguntas referentes ao banco de dados dvd_rental
+├── .gitignore                   # Arquivo para ignorar arquivos e diretórios no Git
+├── README.md                    # Arquivo de descrição do projeto
 ```
-
-**Instruções**:
-1. Instalar um ambiente de banco de dados relacional (ex.: MySQL ou PostgreSQL).
-2. Executar as scripts SQL na ordem indicada.
-3. Explorar o sistema do restaurante via consultas SQL.
-4. Utilizar os scripts da Parte 2 para responder as perguntas com base no banco de dados `dvd_rental`.
