@@ -1,72 +1,78 @@
 
-
-create table cliente (
-	id serial primary key not null,
-	nome varchar(255) not null,
-	cpf varchar(11) not null unique,
-	telefone varchar(11),
-	email varchar(50),
-	data_nascimento date
+CREATE TABLE cliente (
+	id serial PRIMARY KEY NOT NULL,
+	nome VARCHAR(255) NOT NULL,
+	cpf VARCHAR(11) NOT NULL UNIQUE,
+	telefone VARCHAR(11),
+	email VARCHAR(50),
+	data_nascimento DATE
 );
 
-create table pedido (
-	id serial primary key not null,
-	data_hora timestamptz not null,
-	id_cliente integer not null,
-	foreign key (id_cliente) references cliente (id)
+
+CREATE TABLE pedido (
+	id serial PRIMARY KEY NOT NULL,
+	data_hora timestamptz NOT NULL,
+	id_cliente INTEGER NOT NULL,
+	FOREIGN KEY (id_cliente) REFERENCES cliente (id)
 );
 
-create table prato (
-	id serial primary key not null,
-	nome varchar(255) not null,
-	descricao varchar(255),
-	preco float not null
+
+CREATE TABLE prato (
+	id serial PRIMARY KEY NOT NULL,
+	nome VARCHAR(255) NOT NULL,
+	descricao VARCHAR(255),
+	preco FLOAT NOT NULL
 );
 
-create table funcionario (
-	id serial primary key not null,
-	nome varchar(255) not null,
-	cpf varchar(11) not null unique,
-	cargo varchar(30) not null,
-	telefone varchar(11) not null
+
+CREATE TABLE funcionario (
+	id serial PRIMARY KEY NOT NULL,
+	nome VARCHAR(255) NOT NULL,
+	cpf VARCHAR(11) NOT NULL UNIQUE,
+	cargo VARCHAR(30) NOT NULL,
+	telefone VARCHAR(11) NOT NULL
 );
 
-create table pedido_prato (
-	id serial primary key not null,
-	id_pedido integer not null,
-	id_prato integer not null,
-	foreign key (id_pedido) references pedido (id),
-	foreign key (id_prato) references prato (id)
+
+CREATE TABLE pedido_prato (
+	id serial PRIMARY KEY NOT NULL,
+	id_pedido INTEGER NOT NULL,
+	id_prato INTEGER NOT NULL,
+	FOREIGN KEY (id_pedido) REFERENCES pedido (id),
+	FOREIGN KEY (id_prato) REFERENCES prato (id)
 );
 
-create table pedido_funcionario (
-	id serial primary key not null,
-	id_pedido integer not null,
-	id_funcionario integer not null,
-	foreign key (id_pedido) references pedido (id),
-	foreign key (id_funcionario) references funcionario (id)
+
+CREATE TABLE pedido_funcionario (
+	id serial PRIMARY KEY NOT NULL,
+	id_pedido INTEGER NOT NULL,
+	id_funcionario INTEGER NOT NULL,
+	FOREIGN KEY (id_pedido) REFERENCES pedido (id),
+	FOREIGN KEY (id_funcionario) REFERENCES funcionario (id)
 );
 
-create table reserva (
-	id serial primary key not null,
-	data_hora timestamptz not null,
-	id_cliente integer not null,
-	foreign key (id_cliente) references cliente (id)
+
+CREATE TABLE reserva (
+	id serial PRIMARY KEY NOT NULL,
+	data_hora timestamptz NOT NULL,
+	id_cliente INTEGER NOT NULL,
+	FOREIGN KEY (id_cliente) REFERENCES cliente (id)
 );
 
-create table mesa (
-	id serial primary key not null,
-	qtde_assentos integer,
-	status varchar(10)
+
+CREATE TABLE mesa (
+	id serial PRIMARY KEY NOT NULL,
+	qtde_assentos INTEGER,
+	status VARCHAR(10)
 );
 
-create table reserva_mesa (
-	id serial primary key not null,
-	id_reserva integer not null,
-	id_mesa integer not null,
+
+CREATE TABLE reserva_mesa (
+	id serial PRIMARY KEY NOT NULL,
+	id_reserva INTEGER NOT NULL,
+	id_mesa INTEGER NOT NULL,
 	checkin timestamptz,
 	checkout timestamptz,
-	foreign key (id_reserva) references reserva (id),
-	foreign key (id_mesa) references mesa (id)
+	FOREIGN KEY (id_reserva) REFERENCES reserva (id),
+	FOREIGN KEY (id_mesa) REFERENCES mesa (id)
 );
-
